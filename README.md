@@ -1,0 +1,1 @@
+# Apple-AppStore-Metadata-to-Excel
