@@ -29,7 +29,9 @@ def scrape_links():
                 time.sleep(5)
 
                 app_current_url = driver.current_url
-                app_name = driver.find_element(By.XPATH, "//h1[contains(@class, 'header__title')]").text
+                app_name_all_elements = driver.find_element(By.XPATH, "//h1[contains(@class, 'header__title')]").text
+                app_name_span_text = driver.find_element(By.XPATH, "//h1[contains(@class, 'header__title')]/span").text
+                app_name = app_name_all_elements.replace(app_name_span_text, '')
                 app_dev_url = driver.find_element(By.XPATH, "//h2[contains(@class, 'header__identity')]/a").get_attribute("href")
                 app_dev_name = driver.find_element(By.XPATH, "//h2[contains(@class, 'header__identity')]/a").text
 
